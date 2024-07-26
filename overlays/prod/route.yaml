@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: hello-world
+  labels:
+    app: hello-world
+spec:
+  # Remember to change it for different cluster
+  host: hello-world-argocd-prod.apps.cluster-dqk9j.dqk9j.sandbox963.opentlc.com
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+  to:
+    kind: Service
+    name: hello-world
+    weight: 100
+  wildcardPolicy: None
