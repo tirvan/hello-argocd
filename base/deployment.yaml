@@ -26,7 +26,7 @@ spec:
                 name: hello-world-cm        
           securityContext: {}
           image: "quay.io/tanirvan/hello-world-python:v3.0"
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - name: http
               containerPort: 8080
